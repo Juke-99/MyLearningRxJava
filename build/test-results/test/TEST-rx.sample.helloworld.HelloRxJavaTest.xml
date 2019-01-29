@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rx.sample.helloworld.HelloRxJavaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-01-29T12:06:11" hostname="DESKTOP-IHPU14F" time="0.05">
+  <properties/>
+  <testcase name="assertHello" classname="rx.sample.helloworld.HelloRxJavaTest" time="0.05"/>
+  <system-out><![CDATA[Hey! yah
+Hey! uhh
+Hey! raid
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
