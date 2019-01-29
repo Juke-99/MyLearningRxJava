@@ -1,5 +1,8 @@
 package rx.sample.helloworld;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import org.junit.Test;
 
 import io.reactivex.Observable;
@@ -26,5 +29,11 @@ public class HelloRxJavaTest {
 	@Test(expected = NullPointerException.class)
 	public void testJustNull() {
 		Observable<String> observer = Observable.just(null);
+	}
+	
+	@Test
+	public void testSynchronousObserver() {
+		Observable<Object> observer = hello.synchronousObserver("2", "3", "Wow!");
+		observer.subscribe(System.out::println);
 	}
 }

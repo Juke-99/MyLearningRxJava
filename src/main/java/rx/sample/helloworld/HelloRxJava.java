@@ -12,4 +12,14 @@ public class HelloRxJava {
 		Observable<String> observerFrom = Observable.fromArray("a", "b", "c");
 		Observable<String> observerJust = Observable.just("abc");
 	}
+	
+	public Observable<Object> synchronousObserver(String... source) {
+		return Observable.create(observable -> {
+			observable.onNext(source);
+		});
+	}
+	
+	public void asynchronousObserver() {
+		
+	}
 }
