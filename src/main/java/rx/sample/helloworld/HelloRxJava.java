@@ -13,13 +13,25 @@ public class HelloRxJava {
 		Observable<String> observerJust = Observable.just("abc");
 	}
 	
-	public Observable<Object> synchronousObserver(String... source) {
+	public Observable<Object> synchronousObserver() {
 		return Observable.create(observable -> {
-			observable.onNext(source);
+			observable.onNext("one item");
+			observable.onNext("two item");
+			observable.onNext("three item");
 		});
 	}
 	
-	public void asynchronousObserver() {
-		
+	public Observable<Object> chainObserver() {
+		return Observable.create(observer -> {
+			observer.onNext("one item");
+			observer.onNext("two item");
+			observer.onNext("three item");
+			observer.onNext("fore item");
+			observer.onNext("five item");
+			observer.onNext("six item");
+			observer.onNext("seven item");
+			observer.onNext("eight item");
+			observer.onNext("nine item");
+		});
 	}
 }
