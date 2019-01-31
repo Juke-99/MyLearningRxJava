@@ -34,4 +34,20 @@ public class HelloRxJava {
 			observer.onNext("nine item");
 		});
 	}
+	
+	public Observable<Object> mergeObserver() {
+		Observable<String> observable1 = Observable.create(observer -> {
+			observer.onNext("ob1-1");
+			observer.onNext("ob1-2");
+			observer.onNext("ob1-3");
+		});
+		
+		Observable<Integer> observable2 = Observable.create(observer -> {
+			observer.onNext(21);
+			observer.onNext(22);
+			observer.onNext(23);
+		});
+		
+		return Observable.merge(observable1, observable2);
+	}
 }

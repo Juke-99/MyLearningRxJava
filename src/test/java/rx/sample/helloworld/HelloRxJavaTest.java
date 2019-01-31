@@ -3,6 +3,7 @@ package rx.sample.helloworld;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import org.junit.Test;
@@ -67,5 +68,14 @@ public class HelloRxJavaTest {
 		logger.info("skip: 1, take: 5");
 		hello.chainObserver().skip(1).take(5)
 		.map(t -> t.toString()).subscribe(System.out::println);
+	}
+	
+	@Test
+	public void testMergeReduce() {
+		logger.info("check merge");
+		hello.mergeObserver().subscribe(System.out::println);
+		
+		logger.info("reduce");
+		hello.mergeObserver().reduce(3, (x, y) -> x.intValue()).subscribe(System.out::println);
 	}
 }
