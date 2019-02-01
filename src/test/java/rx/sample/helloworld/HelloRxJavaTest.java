@@ -76,6 +76,9 @@ public class HelloRxJavaTest {
 		hello.mergeObserver().subscribe(System.out::println);
 		
 		logger.info("reduce");
-		hello.mergeObserver().reduce(3, (x, y) -> x.intValue()).subscribe(System.out::println);
+		hello.mergeObserverInteger().reduce(new ArrayList<Integer>(), (x, y) -> {
+			x.add(y);
+			return x;
+		}).subscribe(System.out::println);
 	}
 }

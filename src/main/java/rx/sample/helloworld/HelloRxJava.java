@@ -50,4 +50,20 @@ public class HelloRxJava {
 		
 		return Observable.merge(observable1, observable2);
 	}
+	
+	public Observable<Integer> mergeObserverInteger() {
+		Observable<Integer> observable1 = Observable.create(observer -> {
+			observer.onNext(11);
+			observer.onNext(12);
+			observer.onNext(13);
+		});
+		
+		Observable<Integer> observable2 = Observable.create(observer -> {
+			observer.onNext(21);
+			observer.onNext(22);
+			observer.onNext(23);
+		});
+		
+		return Observable.merge(observable1, observable2);
+	}
 }
