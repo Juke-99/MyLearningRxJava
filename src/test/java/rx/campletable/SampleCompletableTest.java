@@ -14,4 +14,8 @@ public class SampleCompletableTest {
 		assertEquals(3, ac.completableAtomicInteger(new AtomicInteger(0)).get());
 	}
 
+	@Test
+	public void testAlwaysTrue() {
+		assertEquals(3, ac.alwaysTrue(new AtomicInteger(0)).get());
+	}
 }
