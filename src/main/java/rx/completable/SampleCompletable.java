@@ -1,4 +1,4 @@
-package rx.campletable;
+package rx.completable;
 
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
